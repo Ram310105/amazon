@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Amazon Clone</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f0f0;
+        }
+        .header {
+            background-color: #232f3e;
+            padding: 10px 20px;
+            display: flex;
+            align-items: center;
+            color: #fff;
+        }
+        .header .logo {
+            margin-right: 20px;
+        }
+        .header .logo img {
+            height: 40px;
+            border: none; /* Ensure no border around the logo */
+        }
+        .header .search-bar {
+            flex: 1;
+            display: flex;
+        }
+        .header .search-bar input {
+            flex: 1;
+            padding: 10px;
+            border: none;
+            border-radius: 4px 0 0 4px;
+        }
+        .header .search-bar button {
+            padding: 10px 20px;
+            background-color: #febd69;
+            border: none;
+            border-radius: 0 4px 4px 0;
+            cursor: pointer;
+        }
+        .header .search-bar button:hover {
+            background-color: #f3a847;
+        }
+        .header .user-options {
+            display: flex;
+            align-items: center;
+        }
+        .header .user-options a {
+            margin-left: 15px;
+            color: #fff;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        .header .user-options a:hover {
+            color: #febd69;
+        }
+        .hero {
+            background-color: #fff;
+            padding: 10px;
+            text-align: center;
+        }
+        .hero img {
+            width: 100%;
+            height: 500px;
+            border: none; /* Ensure no border around the hero image */
+            display: block; /* Ensure no space below the image */
+        }
+        .product-section {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            padding: 20px;
+        }
+        .product {
+            background-color: #fff;
+            margin: 10px;
+            padding: 15px;
+            width: 200px;
+            text-align: center;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+        .product img {
+            width: 100%;
+            height: auto;
+            border: none; /* Ensure no border around the product images */
+            border-radius: 5px;
+            margin-bottom: 10px;
+            display: block; /* Ensure no space below the image */
+        }
+        .product h3 {
+            font-size: 18px;
+            color: #333;
+            margin-bottom: 0;
+        }
+        .product p {
+            color: #b12704;
+            font-size: 16px;
+            margin-bottom: 10px;
+        }
+        .footer {
+            background-color: #232f3e;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+        }
+        .footer a {
+            color: #febd69;
+            text-decoration: none;
+        }
+        .footer a:hover {
+            text-decoration: underline;
+        }
+        .footer ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        .footer ul li {
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header Section -->
+    <div class="header">
+        <div class="logo">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/a/a9/Amazon_logo.svg" alt="Amazon Logo">
+        </div>
+        <div class="search-bar">
+            <input type="text" placeholder="Search for products">
+            <button>Search</button>
+        </div>
+        <div class="user-options">
+            <a href="#">Sign in</a>
+            <a href="#">Returns</a>
+            <a href="#">Orders</a>
+        </div>
+    </div>
+
+    <!-- Hero Section -->
+    <div class="hero">
+        <img src="https://images-eu.ssl-images-amazon.com/images/G/31/img21/Fashion/pricepointstore/Under399/Clothing/399_01.jpg" alt="Hero Banner">
+    </div>
+
+    <!-- Product Section -->
+    <section class="product-section">
+        <div class="product">
+            <img src="https://assets.ajio.com/medias/sys_master/root/20240109/4ROW/659d45b254c30e62769f3a82/-473Wx593H-466113483-white-MODEL.jpg" alt="Product 1">
+            <h3>White shirt</h3>
+            <p>299/-</p>
+        </div>
+        <div class="product">
+            <img src="https://5.imimg.com/data5/LS/IO/EM/SELLER-86680741/mens-denim-black-faded-jeans.jpg" alt="Product 2">
+            <h3>Black pant</h3>
+            <p>499/-</p>
+        </div>
+        <div class="product">
+            <img src="data:image/jpeg;base64,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" alt="Product 3">
+            <h3>chain</h3>
+            <p>199/-</p>
+        </div>
+        <div class="product">
+            <img src="https://images-cdn.ubuy.co.in/6421bb7392603a2a132933ff-new-2019-spring-summer-canvas-shoes-men.jpg" alt="Product 4">
+            <h3>Black shoes</h3>
+            <p>999/-</p>
+        </div>
+    </section>
+
+    <!-- Footer Section -->
+    <div class="footer">
+        <p>&copy; 2024 Amazon Clone. All rights reserved.</p>
+        <ul>
+            <li><a href="#">About Us</a></li>
+            <li><a href="#">Contact</a></li>
+            <li><a href="#">Privacy Policy</a></li>
+            <li><a href="#">Terms of Service</a></li>
+        </ul>
+    </div>
+</body>
+</html>
